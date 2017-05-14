@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 100%;
+				height: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p><a href="callkack.js">callkack</a></p>
+			<p>1、因为异步的原因，setTimeout进入"任务列队"，所以setTimeout的执行顺序要往后靠了,全局函数setTimeout</p>
+			<p>2、c=0直接执行 console.log(printIt)</p>
+			<p>3、printIt()</p>
+			<p>4、c+=1 , callback()</p>
+		</div>
+		<div class="box">
+			<p><a href="demo4.js">demo4</a></p>
+			<p>1、第一个nextTick的意思是把当前函数的添加到“任务列队中的最后”</p>
+			<p>2、在nextTick，又有一个nextTick的函数，所以是先执行外面，在执行里面的！</p>
+			<p>3、setTimeout全局函数 是直接添加到“任务列队外的最后”</p>
+			<p>4、所以答案是 1 ，2 ，3</p>
+		</div>
+		<div class="box">
+			<p><a href="demo7.js">demo7</a></p>
+			<p>1、结果</p>
+			<p>2、同步执行的结果在前，按顺序出结果，因为异步阻塞的原因，当双方都进入"任务列队的时候"，异步需要判断条件，同步则直接执行</p>
+			<p>3、同步读取直接进行</p>
+			<p>4、异步读取会有一个异常处理机制！</p>
+		</div>
+		<div class="box">
+			<p><a href="IO.js">IO</a></p>
+			<p>1、同步：同步过程中进程触发IO操作并等待或者轮询的去查看IO操作是否完成。</p>
+			<p>2、异步：异步过程中进程触发IO操作以后，直接返回，做自己的事情，IO交给内核来处理，完成后内核通知进程IO完成</p>
+			<p>3、阻塞：应用进程请求IO ，如果数据为准备号，请求是否立即返回   不立即返回   阻塞</p>
+			<p>4、非阻塞：应用进程请求IO ，如果数据为准备号，请求是否立即返回   立即返回   非阻塞</p>
+		</div>
+	</body>
+</html>
